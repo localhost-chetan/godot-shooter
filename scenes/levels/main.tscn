@@ -1,37 +1,22 @@
 [gd_scene format=3 uid="uid://c5ljmngn4052u"]
 
-[ext_resource type="Texture2D" uid="uid://ryb0r2eunvu7" path="res://graphics/objects/gate.png" id="1_72ix8"]
 [ext_resource type="Script" uid="uid://dxar77cn0fe4k" path="res://scenes/levels/main.gd" id="1_y0acb"]
 [ext_resource type="PackedScene" uid="uid://w8l2khf6llpe" path="res://scenes/player/player.tscn" id="2_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://cdj7ewt0la50w" path="res://scenes/objects/gate.tscn" id="2_y0acb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vj2h"]
-size = Vector2(309, 60.75)
-
-[node name="Main" type="Node" unique_id=359929937]
+[node name="Main" type="Node" unique_id=1738811471]
 script = ExtResource("1_y0acb")
 
-[node name="Gate" type="StaticBody2D" parent="." unique_id=524329428]
-position = Vector2(-87, -57)
+[node name="Gate" parent="." unique_id=1049865826 instance=ExtResource("2_y0acb")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Gate" unique_id=1943555807]
-position = Vector2(567, 309)
-scale = Vector2(0.35021925, 0.35021925)
-texture = ExtResource("1_72ix8")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gate" unique_id=1106387198]
-position = Vector2(0, 7)
-polygon = PackedVector2Array(72, 3, 1119, -12, 1101, 501, 1092, 534, 1065, 564, 1005, 576, 867, 573, 747, 573, 747, 537, 747, 522, 432, 522, 432, 528, 432, 555, 432, 570, 132, 567, 114, 555, 90, 531, 78, 504, 75, 465)
-
-[node name="Area2D" type="Area2D" parent="Gate" unique_id=2065294680]
-position = Vector2(0, -2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/Area2D" unique_id=1542428156]
-position = Vector2(591, 571.625)
-shape = SubResource("RectangleShape2D_2vj2h")
+[node name="Projectiles" type="Node" parent="." unique_id=1127724143]
+unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=1222607543 instance=ExtResource("2_2vj2h")]
+unique_name_in_owner = true
 position = Vector2(471, 705)
 scale = Vector2(0.36, 0.36)
 
-[connection signal="body_entered" from="Gate/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Gate/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]

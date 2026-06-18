@@ -11,20 +11,33 @@ script = ExtResource("1_dovo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=549162053]
 texture = ExtResource("1_8afob")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=87205123]
 position = Vector2(0, 36)
 shape = SubResource("CircleShape2D_dovo2")
+metadata/_edit_lock_ = true
 
 [node name="Timers" type="Node" parent="." unique_id=197768447]
 
 [node name="LaserTimer" type="Timer" parent="Timers" unique_id=1661260579]
 unique_name_in_owner = true
-wait_time = 0.25
+wait_time = 0.2
 
 [node name="GrenadeReloadTimer" type="Timer" parent="Timers" unique_id=1615429821]
 unique_name_in_owner = true
-wait_time = 0.3
+wait_time = 0.2
+
+[node name="LaserStartPositions" type="Node2D" parent="." unique_id=444227404]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions" unique_id=1157268826]
+position = Vector2(10.9, -90)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions" unique_id=590959322]
+position = Vector2(19.415, -96)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions" unique_id=698917917]
+position = Vector2(27, -90)
 
 [connection signal="timeout" from="Timers/LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="Timers/GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
