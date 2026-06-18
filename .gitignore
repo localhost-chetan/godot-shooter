@@ -1,5 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-.opencode/
-skills-lock.json
+# .opencode/
+# skills-lock.json
