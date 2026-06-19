@@ -10,11 +10,12 @@ radius = 54.0
 script = ExtResource("1_dovo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=549162053]
+rotation = 1.3962634
 texture = ExtResource("1_8afob")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=87205123]
-position = Vector2(0, 36)
+position = Vector2(-39, 9)
 shape = SubResource("CircleShape2D_dovo2")
 metadata/_edit_lock_ = true
 
@@ -31,13 +32,13 @@ wait_time = 0.2
 [node name="LaserStartPositions" type="Node2D" parent="." unique_id=444227404]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions" unique_id=1157268826]
-position = Vector2(10.9, -90)
+position = Vector2(90, -3)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions" unique_id=590959322]
-position = Vector2(19.415, -96)
+position = Vector2(96, 3)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions" unique_id=698917917]
-position = Vector2(27, -90)
+position = Vector2(93, 9)
 
 [connection signal="timeout" from="Timers/LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="Timers/GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]

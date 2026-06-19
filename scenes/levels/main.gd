@@ -11,13 +11,16 @@ func _on_gate_player_entered_gate(body: Node2D) -> void:
 	print(body, " has entered")
 
 
-func _on_player_laser(pos: Vector2) -> void:
-	var laser = laser_scene.instantiate()
-	laser.position = pos
+func _on_player_laser(player_position: Vector2, player_direction: Vector2) -> void:
+	var laser = laser_scene.instantiate() as Area2D
+	laser.position = player_position
+	laser.direction = player_direction
+	laser.rotation_degrees = rad_to_deg( player_direction.angle()) + 90 
 	projectiles.add_child(laser)
 
 
-func _on_player_grenade(pos: Vector2) -> void:
-	var grenade = grenade_scene.instantiate()
-	grenade.position = pos
+func _on_player_grenade(player_position: Vector2, player_direction: Vector2) -> void:
+	var grenade = grenade_scene.instantiate() as RigidBody2D
+	grenade.position = player_position
+	grenade.linear_velocity = player_direction * grenade.speed
 	projectiles.add_child(grenade)
