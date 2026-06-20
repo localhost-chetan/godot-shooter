@@ -17,6 +17,16 @@ unique_name_in_owner = true
 position = Vector2(471, 705)
 scale = Vector2(0.36, 0.36)
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=676111694]
+zoom = Vector2(1.7, 1.7)
+limit_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
