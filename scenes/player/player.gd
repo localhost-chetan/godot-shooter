@@ -5,13 +5,14 @@ signal grenade(player_position: Vector2, player_direction: Vector2)
    
 
 var direction: Vector2
-var speed := 250
+@export var speed := 250
 var can_laser := true
 var can_grenade := true
 
 @onready var laser_timer: Timer = %LaserTimer
 @onready var grenade_reload_timer: Timer = %GrenadeReloadTimer
 @onready var laser_start_positions: Node = $LaserStartPositions
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 
 func get_random_marker_position():
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 	var player_direction = (self.get_global_mouse_position() - self.global_position).normalized()     
 	
 	if (Input.is_action_pressed("primary action") and can_laser):
+		gpu_particles_2d.emitting = true
 		can_laser = false 
 		laser_timer.start() 
 		laser.emit(get_random_marker_position(), player_direction)

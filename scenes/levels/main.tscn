@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddashvyw6pkm" path="res://graphics/decals/moss/moss_5.png" id="8_6ui35"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="9_hwp66"]
 [ext_resource type="PackedScene" uid="uid://c1xucphiq8u10" path="res://scenes/objects/house.tscn" id="12_2xkjh"]
+[ext_resource type="PackedScene" uid="uid://b7y72qd7pboro" path="res://scenes/objects/steam_vent.tscn" id="12_dj21o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj21o"]
 texture = ExtResource("9_hwp66")
@@ -66,7 +67,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1084031293]
 modulate = Color(1.211, 1.211, 0.779, 1)
-position = Vector2(175.00003, 937.0001)
+position = Vector2(-605.9999, 1269.0001)
 rotation = -0.574047
 scale = Vector2(0.21222852, 0.21222852)
 texture = ExtResource("3_u81e1")
@@ -135,13 +136,16 @@ metadata/_edit_lock_ = true
 
 [node name="Gate" parent="." unique_id=1049865826 instance=ExtResource("2_y0acb")]
 
-[node name="Projectiles" type="Node" parent="." unique_id=1127724143]
-unique_name_in_owner = true
-
 [node name="House" parent="." unique_id=452857233 instance=ExtResource("12_2xkjh")]
 position = Vector2(-1537, 2070)
 rotation = -1.9155408
 scale = Vector2(0.45, 0.45)
+
+[node name="SteamVent" parent="." unique_id=1368376206 instance=ExtResource("12_dj21o")]
+position = Vector2(207, 724)
+
+[node name="Projectiles" type="Node" parent="." unique_id=1127724143]
+unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=1222607543 instance=ExtResource("2_2vj2h")]
 unique_name_in_owner = true

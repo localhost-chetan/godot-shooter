@@ -12,7 +12,7 @@ func _on_gate_player_entered_gate(body: Node2D) -> void:
 
 
 func _on_player_laser(player_position: Vector2, player_direction: Vector2) -> void:
-	var laser = laser_scene.instantiate() as Area2D
+	var laser = laser_scene.instantiate() as StaticBody2D
 	laser.position = player_position
 	laser.direction = player_direction
 	laser.rotation_degrees = rad_to_deg( player_direction.angle()) + 90 

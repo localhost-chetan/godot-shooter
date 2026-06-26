@@ -7,7 +7,7 @@
 radius = 9.0
 height = 168.0
 
-[node name="Laser" type="Area2D" unique_id=1220565652]
+[node name="Laser" type="StaticBody2D" unique_id=1738408883]
 scale = Vector2(0.4, 0.4)
 collision_layer = 8
 collision_mask = 7
