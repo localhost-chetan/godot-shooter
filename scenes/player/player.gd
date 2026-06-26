@@ -18,14 +18,16 @@ func get_random_marker_position():
 	var selected_laser: Marker2D = laser_start_positions.get_children().pick_random()
 	return selected_laser.global_position
 	
-
-func _process(_delta: float) -> void:
+	
+func _physics_process(_delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	self.move_and_slide()
-	
 	self.look_at(get_global_mouse_position())
 	
+	
+
+func _process(_delta: float) -> void:
 	var player_direction = (self.get_global_mouse_position() - self.global_position).normalized()     
 	
 	if (Input.is_action_pressed("primary action") and can_laser):
