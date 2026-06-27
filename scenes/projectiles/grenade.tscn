@@ -8,6 +8,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_b7x1w"]
 radius = 75.53807
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vd7ja"]
+polygon = PackedVector2Array(-15, 4, -15, 5, -14, 8, -13.679995, 8.63999, -13.119995, 8.439991, -12.639994, 8.31999, -10.639994, 10.99999, -8.639994, 12.279991, -5.9199944, 13.87999, -2.0799942, 14.919991, 1.9200058, 14.959991, 4.2400055, 14.519989, 4.720005, 14.999989, 6.800007, 14.23999, 8.640003, 13.39999, 9.080006, 12.919991, 8.720005, 12.23999, 11.640003, 9.63999, 13.840004, 6.9999905, 14.840004, 3.8799915, 15.440006, 0.5599899, 15.2400055, -2.2000093, 14.800003, -3.560009, 15.720005, -4.2400093, 15.480003, -5.480009, 14.920006, -6.680009, 14.440006, -6.9600086, 13.520004, -7.0400095, 11.760006, -9.280009, 10.120007, -11.080009, 8.360004, -12.600009, 5.2800064, -14.080009, 2.2800064, -14.840009, -2.359995, -14.920009, -4.8399944, -14.480009, -6.359995, -13.840009, -6.9599953, -14.560009, -7.6799946, -14.480009, -8.999994, -13.720009, -9.519995, -13.280008, -9.559994, -12.240009, -11.599995, -10.520009, -13.479994, -7.800009, -14.959995, -4.8400087, -15.559994, -1.8400087, -15.559994, 1.3999901)
+
 [node name="Grenade" type="RigidBody2D" unique_id=326603430]
 collision_layer = 8
 collision_mask = 15
@@ -16,10 +19,13 @@ gravity_scale = 0.0
 script = ExtResource("1_b7x1w")
 speed = 700
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69310185]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_b7x1w")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1794407421]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_1mnvm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69310185]
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CircleShape2D_b7x1w")
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2127937723]
+occluder = SubResource("OccluderPolygon2D_vd7ja")

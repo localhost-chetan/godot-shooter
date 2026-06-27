@@ -26,19 +26,22 @@ color_ramp = SubResource("GradientTexture1D_gmlin")
 turbulence_initial_displacement_min = 35.000004
 turbulence_initial_displacement_max = 35.000004
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vd7ja"]
+polygon = PackedVector2Array(-14, 56, -24, 63, -33, 67, -47, 68, -61, 65, -65, 58, -73, 48, -77, 44, -85, 36, -84, 29, -94, 21, -99, -5, -95, -15, -94, -24, -87, -31, -76, -34, -71, -36, -74, -40, -69, -47, -60, -49, -56, -48, -41, -55, -34, -55, -27, -57, -20, -58, -10, -51, -4, -45, 1, -41, 6, -37, 7, -33, 15, -33, 19, -31, 25, -28, 28, -26, 37, -20, 49, -21, 58, -16, 71, -17, 75, -14, 84, -14, 88, -11, 92, -11, 98, -5, 100, 4, 99, 12, 97, 18, 91, 16, 91, 21, 87, 22, 79, 23, 75, 24, 71, 31, 68, 33, 68, 39, 65, 43, 62, 45, 57, 45, 49, 47, 47, 48, 42, 49, 37, 48, 33, 47, 29, 46, 27, 42, 27, 40, 31, 37, 26, 37, 22, 39, 15, 39, 12, 41, 6, 46, -2, 49, -8, 52)
+
 [node name="Player" type="CharacterBody2D" unique_id=1222607543]
 collision_mask = 31
 script = ExtResource("1_dovo2")
 speed = 270
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=549162053]
-rotation = 1.3962634
-texture = ExtResource("1_8afob")
-metadata/_edit_lock_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=87205123]
 position = Vector2(-39, 9)
 shape = SubResource("CircleShape2D_dovo2")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=549162053]
+rotation = 1.3962634
+texture = ExtResource("1_8afob")
 metadata/_edit_lock_ = true
 
 [node name="Timers" type="Node" parent="." unique_id=197768447]
@@ -70,6 +73,9 @@ texture = ExtResource("3_gmlin")
 lifetime = 0.25
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_vd7ja")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=975338965]
+occluder = SubResource("OccluderPolygon2D_vd7ja")
 
 [connection signal="timeout" from="Timers/LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="Timers/GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]

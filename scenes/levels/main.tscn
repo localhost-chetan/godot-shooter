@@ -162,6 +162,11 @@ limit_bottom = 1080
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1799863432]
+color = Color(0.05089091, 0.05089091, 0.05089091, 1)
+energy = 3.5
+blend_mode = 1
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
