@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddashvyw6pkm" path="res://graphics/decals/moss/moss_5.png" id="8_6ui35"]
 [ext_resource type="Texture2D" uid="uid://c7shvj3xlt2y8" path="res://graphics/tilesets/soil.png" id="9_hwp66"]
 [ext_resource type="PackedScene" uid="uid://c1xucphiq8u10" path="res://scenes/objects/house.tscn" id="12_2xkjh"]
+[ext_resource type="PackedScene" uid="uid://bk8qp8ruk0rs6" path="res://scenes/objects/light_fan_animation.tscn" id="12_6ui35"]
 [ext_resource type="PackedScene" uid="uid://b7y72qd7pboro" path="res://scenes/objects/steam_vent.tscn" id="12_dj21o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj21o"]
@@ -141,6 +142,20 @@ position = Vector2(-1537, 2070)
 rotation = -1.9155408
 scale = Vector2(0.45, 0.45)
 
+[node name="LightFanAnimation" parent="House" unique_id=1295620126 instance=ExtResource("12_6ui35")]
+position = Vector2(637.438, 1104.8796)
+rotation = 1.9155408
+scale = Vector2(1.5, 1.5)
+
+[node name="LightFanAnimation2" parent="House" unique_id=1546892925 instance=ExtResource("12_6ui35")]
+position = Vector2(955.1017, -726.6384)
+rotation = 1.9155408
+
+[node name="LightFanAnimation3" parent="House" unique_id=483411893 instance=ExtResource("12_6ui35")]
+position = Vector2(-1281.4401, 215.14359)
+rotation = 1.9155408
+scale = Vector2(0.75, 0.75)
+
 [node name="SteamVent" parent="." unique_id=1368376206 instance=ExtResource("12_dj21o")]
 position = Vector2(207, 724)
 
@@ -164,7 +179,7 @@ position_smoothing_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1799863432]
 color = Color(0.05089091, 0.05089091, 0.05089091, 1)
-energy = 3.5
+energy = 2.0
 blend_mode = 1
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

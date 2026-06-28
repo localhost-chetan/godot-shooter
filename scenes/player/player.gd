@@ -43,7 +43,6 @@ func _process(_delta: float) -> void:
 		grenade.emit(get_random_marker_position(), player_direction)
 		
 
-
 func _on_laser_timer_timeout() -> void:
 	can_laser = true
 
