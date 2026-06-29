@@ -183,7 +183,7 @@ collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_1mnvm")
 gravity_scale = 0.0
 script = ExtResource("1_b7x1w")
-speed = 700
+speed = 550
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69310185]
 scale = Vector2(0.2, 0.2)

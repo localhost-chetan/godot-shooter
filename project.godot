@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shooter"
-run/main_scene="uid://c5ljmngn4052u"
+run/main_scene="uid://djb7gw04ujcff"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
