@@ -168,7 +168,7 @@ position = Vector2(471, 705)
 scale = Vector2(0.36, 0.36)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=676111694]
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(1.5, 1.5)
 limit_enabled = false
 limit_left = 0
 limit_top = 0
@@ -183,5 +183,7 @@ energy = 2.0
 blend_mode = 1
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="House" to="." method="_on_house_player_exited"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
