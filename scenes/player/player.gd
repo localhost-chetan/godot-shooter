@@ -26,7 +26,6 @@ func _physics_process(_delta: float) -> void:
 	self.move_and_slide()
 	self.look_at(get_global_mouse_position())
 	
-	
 
 func _process(_delta: float) -> void:
 	var player_direction = (self.get_global_mouse_position() - self.global_position).normalized()     

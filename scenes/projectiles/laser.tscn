@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bcokuscsiyw72" path="res://graphics/projectiles/blue.png" id="1_rlgyd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6ads"]
-radius = 9.0
-height = 168.0
+radius = 7.499999
+height = 104.99999
 
-[node name="Laser" type="StaticBody2D" unique_id=1738408883]
+[node name="Laser" type="Area2D" unique_id=1838152882]
 scale = Vector2(0.4, 0.4)
 collision_layer = 8
 collision_mask = 7
@@ -17,4 +17,13 @@ script = ExtResource("1_e6ads")
 texture = ExtResource("1_rlgyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804400420]
+position = Vector2(0, -29.999998)
 shape = SubResource("CapsuleShape2D_e6ads")
+
+[node name="LaserTimeout" type="Timer" parent="." unique_id=1816449077]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="LaserTimeout" to="." method="_on_laser_timeout_timeout"]

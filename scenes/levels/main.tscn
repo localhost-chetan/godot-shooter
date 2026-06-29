@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c1xucphiq8u10" path="res://scenes/objects/house.tscn" id="12_2xkjh"]
 [ext_resource type="PackedScene" uid="uid://bk8qp8ruk0rs6" path="res://scenes/objects/light_fan_animation.tscn" id="12_6ui35"]
 [ext_resource type="PackedScene" uid="uid://b7y72qd7pboro" path="res://scenes/objects/steam_vent.tscn" id="12_dj21o"]
+[ext_resource type="PackedScene" uid="uid://euu85vmth3io" path="res://scenes/objects/drone.tscn" id="14_y56qp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj21o"]
 texture = ExtResource("9_hwp66")
@@ -66,11 +67,11 @@ region_enabled = true
 region_rect = Rect2(-3992.8271, -2602.2007, 9756.998, 6504.6655)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1084031293]
+[node name="DirtPatch" type="Sprite2D" parent="Ground" unique_id=1084031293]
 modulate = Color(1.211, 1.211, 0.779, 1)
-position = Vector2(-605.9999, 1269.0001)
+position = Vector2(-196.00006, 1375)
 rotation = -0.574047
-scale = Vector2(0.21222852, 0.21222852)
+scale = Vector2(0.29464397, 0.29464397)
 texture = ExtResource("3_u81e1")
 
 [node name="Moss2" type="Sprite2D" parent="Ground" unique_id=1294461663]
@@ -138,9 +139,10 @@ metadata/_edit_lock_ = true
 [node name="Gate" parent="." unique_id=1049865826 instance=ExtResource("2_y0acb")]
 
 [node name="House" parent="." unique_id=452857233 instance=ExtResource("12_2xkjh")]
-position = Vector2(-1537, 2070)
-rotation = -1.9155408
+position = Vector2(-1284, 1941)
+rotation = -1.5760323
 scale = Vector2(0.45, 0.45)
+metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="House" unique_id=1295620126 instance=ExtResource("12_6ui35")]
 position = Vector2(637.438, 1104.8796)
@@ -161,6 +163,10 @@ position = Vector2(207, 724)
 
 [node name="Projectiles" type="Node" parent="." unique_id=1127724143]
 unique_name_in_owner = true
+
+[node name="Drone" parent="." unique_id=45742356 instance=ExtResource("14_y56qp")]
+position = Vector2(-104, 646)
+scale = Vector2(0.25, 0.25)
 
 [node name="Player" parent="." unique_id=1222607543 instance=ExtResource("2_2vj2h")]
 unique_name_in_owner = true
