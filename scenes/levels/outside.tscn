@@ -144,7 +144,6 @@ position = Vector2(207, 724)
 [node name="House" parent="Ground" index="8" unique_id=452857233 instance=ExtResource("12_qvsb0")]
 position = Vector2(-1284, 1941)
 rotation = -1.5760323
-scale = Vector2(0.45, 0.45)
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Ground/House" index="6" unique_id=1295620126 instance=ExtResource("13_xqqjy")]

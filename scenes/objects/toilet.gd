@@ -1,6 +1,5 @@
 extends ItemContainer
 
 
-func hit():
+func hit() -> void:
 	print("Toilet")
-	

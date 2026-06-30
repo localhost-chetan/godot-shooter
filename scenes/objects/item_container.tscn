@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://b0u1yexp4pbd7"]
 
-[ext_resource type="Script" uid="uid://do3s3wwfynuj3" path="res://scenes/objects/item_container.gd" id="1_oy2yp"]
-
 [node name="ItemContainer" type="StaticBody2D" unique_id=983980978]
-script = ExtResource("1_oy2yp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203356432]
 

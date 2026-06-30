@@ -12,7 +12,8 @@ unique_name_in_owner = true
 [node name="Player" parent="." unique_id=1222607543 instance=ExtResource("2_2vj2h")]
 unique_name_in_owner = true
 position = Vector2(471, 705)
-scale = Vector2(0.36, 0.36)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_group_ = true
 
 [node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=676111694]
 unique_name_in_owner = true

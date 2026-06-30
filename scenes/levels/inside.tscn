@@ -1,7 +1,175 @@
-[gd_scene format=3 uid="uid://clrb4lkbmrv3q"]
+[gd_scene format=4 uid="uid://clrb4lkbmrv3q"]
 
 [ext_resource type="PackedScene" uid="uid://c5ljmngn4052u" path="res://scenes/levels/main.tscn" id="1_8ht0b"]
 [ext_resource type="Script" uid="uid://g0735j23mrjf" path="res://scenes/levels/inside.gd" id="2_b1uqu"]
+[ext_resource type="TileSet" uid="uid://drb4lson261ig" path="res://scenes/levels/house.tres" id="3_n4crx"]
+[ext_resource type="Texture2D" uid="uid://djv8vudb0d8d1" path="res://graphics/ground/dirt.png" id="4_71x7e"]
+[ext_resource type="PackedScene" uid="uid://bk8qp8ruk0rs6" path="res://scenes/objects/light_fan_animation.tscn" id="5_086xj"]
+[ext_resource type="Texture2D" uid="uid://dgpgsl7hdjjwi" path="res://graphics/lights/overlays/infrastructure.png" id="6_xanyd"]
+[ext_resource type="Texture2D" uid="uid://ddh1uyydfr33n" path="res://graphics/lights/overlays/hole.png" id="7_j5d1l"]
+[ext_resource type="Texture2D" uid="uid://cbpi0sf5qj86c" path="res://graphics/lights/overlays/lattice.png" id="8_6serm"]
+[ext_resource type="PackedScene" uid="uid://shwfayn04l2f" path="res://scenes/objects/wall_light.tscn" id="9_x0st6"]
+[ext_resource type="PackedScene" uid="uid://b7hlpn7o361o0" path="res://scenes/objects/simple_light.tscn" id="10_0kuad"]
+[ext_resource type="Texture2D" uid="uid://b34xtclrtfqxr" path="res://graphics/lights/textures/circle.png" id="11_tkhku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7ja"]
+size = Vector2(154.5, 365)
 
 [node name="Inside" unique_id=1738811471 instance=ExtResource("1_8ht0b")]
 script = ExtResource("2_b1uqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1290876628]
+texture_repeat = 2
+scale = Vector2(1, 1.3560803)
+texture = ExtResource("4_71x7e")
+region_enabled = true
+region_rect = Rect2(-3035.7402, -1175.6218, 6379.4805, 2659.2437)
+metadata/_edit_lock_ = true
+
+[node name="TileMaps" type="Node2D" parent="." index="1" unique_id=1692749861]
+scale = Vector2(0.45, 0.45)
+
+[node name="Floor" type="TileMapLayer" parent="TileMaps" index="0" unique_id=822033248]
+tile_map_data = PackedByteArray("AAD7//z/AAABAAEAAAD7//3/AAABAAEAAAD7//7/AAABAAEAAAD7////AAABAAEAAAD7/wAAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAAABAAEAAAD8//z/AAABAAEAAAD8//3/AAABAAEAAAD8//7/AAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAABAAEAAAD9//z/AAABAAEAAAD9//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD+//z/AAABAAEAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD///z/AAABAAEAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAAAAPz/AAABAAEAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAABAPz/AAABAAEAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAACAPz/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAADAPz/AAABAAEAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAAEAPz/AAABAAEAAAAEAP3/AAABAAEAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAFAPz/AAABAAEAAAAFAP3/AAABAAEAAAAFAP7/AAABAAEAAAAFAP//AAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAIAP7/AAABAAEAAAAIAP//AAABAAEAAAAIAAAAAAABAAEAAAAJAP7/AAABAAEAAAAJAP//AAABAAEAAAAJAAAAAAABAAEAAAAKAP7/AAABAAEAAAAKAP//AAABAAEAAAAKAAAAAAABAAEAAAALAP7/AAABAAEAAAALAP//AAABAAEAAAALAAAAAAABAAEAAAD2//3/AAABAAEAAAD2//7/AAABAAEAAAD2////AAABAAEAAAD2/wAAAAABAAEAAAD2/wEAAAABAAEAAAD3//3/AAABAAEAAAD3//7/AAABAAEAAAD3////AAABAAEAAAD3/wAAAAABAAEAAAD3/wEAAAABAAEAAAD4//3/AAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD4/wAAAAABAAEAAAD4/wEAAAABAAEAAAD5//3/AAABAAEAAAD5//7/AAABAAEAAAD5////AAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAEAAAD6////AAABAAEAAAD6/wAAAAABAAEAAAD6/wEAAAABAAEAAAD7/wMAAAABAAEAAAD7/wQAAAABAAEAAAD7/wUAAAABAAEAAAD7/wYAAAABAAEAAAD8/wMAAAABAAEAAAD8/wQAAAABAAEAAAD8/wUAAAABAAEAAAD8/wYAAAABAAEAAAD9/wMAAAABAAEAAAD9/wQAAAABAAEAAAD9/wUAAAABAAEAAAD9/wYAAAABAAEAAAD+/wMAAAABAAEAAAD+/wQAAAABAAEAAAD+/wUAAAABAAEAAAD+/wYAAAABAAEAAAD//wMAAAABAAEAAAD//wQAAAABAAEAAAD//wUAAAABAAEAAAD//wYAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAA=")
+tile_set = ExtResource("3_n4crx")
+metadata/_edit_lock_ = true
+
+[node name="EdgeFloor" type="TileMapLayer" parent="TileMaps" index="1" unique_id=440889425]
+tile_map_data = PackedByteArray("AAD6/wIAAAABAAQAAAD1/wIAAAAAAAIAAAD2/wIAAAABAAIAAAD3/wIAAAABAAIAAAD4/wIAAAABAAIAAAD5/wIAAAABAAIAAAD6/wMAAAAAAAEAAAD6/wQAAAAAAAEAAAD6/wUAAAAAAAEAAAD6/wYAAAAAAAEAAAD6/wcAAAAAAAIAAAD7/wcAAAABAAIAAAD8/wcAAAABAAIAAAD9/wcAAAABAAIAAAD+/wcAAAABAAIAAAD//wcAAAABAAIAAAAAAAcAAAABAAIAAAABAAcAAAABAAIAAAACAAcAAAABAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAACAAIAAAAHAAYAAAACAAEAAAAHAAUAAAACAAEAAAAHAAQAAAACAAEAAAAHAAMAAAAAAAQAAAAIAAMAAAACAAIAAAAIAAIAAAACAAEAAAAIAAEAAAAAAAQAAAAJAAEAAAABAAIAAAAKAAEAAAABAAIAAAALAAEAAAABAAIAAAAMAAEAAAACAAIAAAAMAAAAAAACAAEAAAAMAP//AAABAAMAAAAMAP7/AAABAAMAAAAMAP3/AAACAAAAAAALAP3/AAABAAAAAAAKAP3/AAABAAAAAAAJAP3/AAABAAAAAAAIAP3/AAAAAAUAAAAIAPz/AAACAAEAAAAIAPv/AAACAAAAAAAHAPv/AAABAAAAAAAGAPv/AAABAAAAAAAFAPv/AAABAAAAAAAEAPv/AAABAAAAAAADAPv/AAABAAAAAAACAPv/AAABAAAAAAABAPv/AAABAAAAAAAAAPv/AAABAAAAAAD///v/AAABAAAAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//v/AAABAAAAAAD7//v/AAABAAAAAAD6//v/AAAAAAAAAAD6//z/AAABAAUAAAD5//z/AAABAAAAAAD4//z/AAABAAAAAAD3//z/AAABAAAAAAD2//z/AAABAAAAAAD1//z/AAAAAAAAAAD1//3/AAAAAAEAAAD1//7/AAAAAAEAAAD1////AAAAAAEAAAD1/wAAAAAAAAEAAAD1/wEAAAAAAAEAAAA=")
+tile_set = ExtResource("3_n4crx")
+metadata/_edit_lock_ = true
+
+[node name="InnerWalls" type="TileMapLayer" parent="TileMaps" index="2" unique_id=2137184646]
+tile_map_data = PackedByteArray("AAAIAPz/AAAGAAcAAAAHAPz/AAAAAAYAAAAGAPz/AAAAAAYAAAAFAPz/AAAAAAYAAAAEAPz/AAAAAAcAAAAEAP3/AAABAAYAAAAEAP7/AAABAAYAAAAEAP//AAABAAgAAAABAP//AAADAAYAAAAAAP//AAAAAAYAAAD/////AAAAAAYAAAD9////AAADAAYAAAABAAAAAAABAAYAAAABAAEAAAABAAYAAAABAAIAAAABAAYAAAD1////AAAEAAcAAAD4////AAADAAgAAAD5////AAACAAcAAAD5/wIAAAAFAAgAAAD5/wEAAAAFAAYAAAD5/wAAAAAFAAgAAAABAAMAAAADAAYAAAABAAQAAAABAAYAAAACAAMAAAAAAAYAAAADAAMAAAAAAAYAAAAEAAMAAAAAAAYAAAAFAAMAAAADAAcAAAAFAAIAAAABAAYAAAABAAYAAAAAAAgAAAACAAYAAAAAAAYAAAADAAYAAAAAAAYAAAAEAAYAAAAAAAYAAAD8////AAAAAAYAAAD6////AAAAAAYAAAD9/wAAAAABAAYAAAD9/wEAAAABAAYAAAD9/wIAAAABAAYAAAD9/wMAAAAAAAgAAAD+/wMAAAAAAAYAAAABAPz/AAABAAYAAAABAPv/AAAFAAYAAAABAP7/AAABAAYAAAAFAAQAAAABAAYAAAAFAAYAAAABAAgAAAAFAAUAAAABAAYAAAD9//7/AAABAAYAAAD9//3/AAABAAYAAAD//wMAAAAAAAYAAAD4//3/AAAFAAgAAAD4//7/AAAFAAYAAAD4//z/AAAFAAYAAAADAP//AAAEAAcAAAACAP//AAAGAAcAAAD3////AAAEAAcAAAD2////AAAGAAcAAAA=")
+tile_set = ExtResource("3_n4crx")
+metadata/_edit_lock_ = true
+
+[node name="OuterWalls" type="TileMapLayer" parent="TileMaps" index="3" unique_id=764080907]
+tile_map_data = PackedByteArray("AAAIAPv/AAAFAAAAAAAIAPz/AAAFAAEAAAAIAP3/AAADAAIAAAAJAP3/AAAEAAIAAAAKAP3/AAAEAAIAAAALAP3/AAAEAAIAAAAMAP3/AAAFAAAAAAAMAAAAAAAFAAEAAAAMAAEAAAAFAAIAAAALAAEAAAAEAAIAAAAKAAEAAAAEAAIAAAAJAAEAAAAEAAIAAAAIAAEAAAADAAAAAAAIAAIAAAADAAEAAAAIAAMAAAAFAAIAAAAHAAMAAAADAAAAAAAHAAQAAAADAAEAAAAHAAUAAAADAAEAAAAHAAYAAAADAAEAAAAHAAcAAAAFAAIAAAAGAAcAAAAEAAIAAAAFAAcAAAAEAAIAAAAEAAcAAAAEAAIAAAADAAcAAAAEAAIAAAACAAcAAAAEAAIAAAABAAcAAAAEAAIAAAAAAAcAAAAEAAIAAAD//wcAAAAEAAIAAAD+/wcAAAAEAAIAAAD9/wcAAAAEAAIAAAD8/wcAAAAEAAIAAAD7/wcAAAAEAAIAAAD6/wcAAAADAAIAAAD6/wYAAAADAAEAAAD6/wUAAAADAAEAAAD6/wQAAAADAAEAAAD6/wMAAAADAAEAAAD6/wIAAAAFAAAAAAD5/wIAAAAEAAAAAAD4/wIAAAAEAAAAAAD3/wIAAAAEAAAAAAD2/wIAAAAEAAAAAAD1/wIAAAADAAIAAAD1/wEAAAADAAEAAAD1/wAAAAADAAEAAAD1////AAADAAEAAAD1//7/AAADAAEAAAD1//3/AAADAAEAAAD1//z/AAADAAAAAAD2//z/AAAEAAAAAAD3//z/AAAEAAAAAAD4//z/AAAEAAAAAAD5//z/AAAEAAAAAAD6//z/AAAFAAIAAAD6//v/AAADAAAAAAD7//v/AAAEAAAAAAD8//v/AAAEAAAAAAD9//v/AAAEAAAAAAD+//v/AAAEAAAAAAD///v/AAAEAAAAAAAAAPv/AAAEAAAAAAABAPv/AAAEAAAAAAACAPv/AAAEAAAAAAADAPv/AAAEAAAAAAAEAPv/AAAEAAAAAAAFAPv/AAAEAAAAAAAGAPv/AAAEAAAAAAAHAPv/AAAEAAAAAAAMAP7/AAAGAAEAAAAMAP//AAAGAAAAAAA=")
+tile_set = ExtResource("3_n4crx")
+metadata/_edit_lock_ = true
+
+[node name="LightFans" type="Node2D" parent="." index="3" unique_id=218461713]
+
+[node name="LightFanAnimation" parent="LightFans" index="0" unique_id=1295620126 instance=ExtResource("5_086xj")]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(1632, -112)
+scale = Vector2(0.8, 0.8)
+
+[node name="LightFanAnimation2" parent="LightFans" index="1" unique_id=1037207573 instance=ExtResource("5_086xj")]
+position = Vector2(-732.99976, 271.99997)
+scale = Vector2(0.418009, 0.418009)
+
+[node name="LightFanAnimation3" parent="LightFans" index="2" unique_id=1739170506 instance=ExtResource("5_086xj")]
+self_modulate = Color(1, 0.27450982, 0.22745098, 1)
+position = Vector2(-838, -376.99997)
+scale = Vector2(0.6338725, 0.6338725)
+
+[node name="LightFanAnimation4" parent="LightFans" index="3" unique_id=2060433145 instance=ExtResource("5_086xj")]
+self_modulate = Color(6.930828e-06, 0.63529336, 0.8152564, 1)
+position = Vector2(-298, 955.00006)
+scale = Vector2(0.92253155, 0.92253155)
+
+[node name="Overlays" type="Node" parent="." index="4" unique_id=596602706]
+
+[node name="Infrastructure" type="Sprite2D" parent="Overlays" index="0" unique_id=2094434240]
+self_modulate = Color(0.25882354, 0.25882354, 0.25882354, 0.5921569)
+position = Vector2(1151.972, 71.153175)
+scale = Vector2(0.447776, 2.3430269)
+texture = ExtResource("6_xanyd")
+
+[node name="Infrastructure2" type="Sprite2D" parent="Overlays" index="1" unique_id=1730291313]
+self_modulate = Color(0.25882354, 0.25882354, 0.25882354, 0.5921569)
+position = Vector2(-695.48596, 597.5)
+scale = Vector2(0.3238881, 1.9041592)
+texture = ExtResource("6_xanyd")
+
+[node name="Hole" type="Sprite2D" parent="Overlays" index="2" unique_id=1272884847]
+self_modulate = Color(0.13620158, 0.43351313, 2.4826183, 0.45700002)
+position = Vector2(-102, 207)
+scale = Vector2(0.746637, 0.746637)
+texture = ExtResource("7_j5d1l")
+
+[node name="Lattice" type="Sprite2D" parent="Overlays" index="3" unique_id=1213314001]
+self_modulate = Color(1.211, 1.211, 0.93, 0.243)
+position = Vector2(610.99994, 858.99994)
+scale = Vector2(1.7217127, 1.7217127)
+texture = ExtResource("8_6serm")
+
+[node name="WallLights" type="Node" parent="." index="5" unique_id=147118957]
+
+[node name="WallLight" parent="WallLights" index="0" unique_id=556094308 instance=ExtResource("9_x0st6")]
+position = Vector2(-319, 1278.49)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="WallLight4" parent="WallLights" index="1" unique_id=170924882 instance=ExtResource("9_x0st6")]
+position = Vector2(603.00006, 596)
+scale = Vector2(0.3, 0.3)
+metadata/_edit_lock_ = true
+
+[node name="WallLight6" parent="WallLights" index="2" unique_id=540515983 instance=ExtResource("9_x0st6")]
+position = Vector2(1280.375, 843)
+rotation = -1.5707964
+scale = Vector2(0.3, 0.3)
+metadata/_edit_lock_ = true
+
+[node name="WallLight2" parent="WallLights" index="3" unique_id=909411909 instance=ExtResource("9_x0st6")]
+position = Vector2(-319, -752.15)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="WallLight3" parent="WallLights" index="4" unique_id=1927009466 instance=ExtResource("9_x0st6")]
+position = Vector2(776, -386)
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+metadata/_edit_lock_ = true
+
+[node name="WallLight5" parent="WallLights" index="5" unique_id=1463842479 instance=ExtResource("9_x0st6")]
+position = Vector2(-456, 225)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight" parent="WallLights" index="6" unique_id=220597440 instance=ExtResource("10_0kuad")]
+position = Vector2(-1802, 167)
+rotation = -1.5707964
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight2" parent="WallLights" index="7" unique_id=1339737954 instance=ExtResource("10_0kuad")]
+position = Vector2(-422, 272)
+rotation = -1.5707964
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight3" parent="WallLights" index="8" unique_id=46441730 instance=ExtResource("10_0kuad")]
+position = Vector2(948, 853)
+rotation = 1.5707964
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight4" parent="WallLights" index="9" unique_id=858745250 instance=ExtResource("10_0kuad")]
+position = Vector2(1134, -597.22)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." index="6" unique_id=1222607543]
+position = Vector2(1920.9999, -115.99994)
+
+[node name="PlayerCamera" parent="Player" index="6" unique_id=676111694]
+position = Vector2(0, -0.00012207031)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="7" unique_id=164239689]
+energy = 2.0
+texture = ExtResource("11_tkhku")
+texture_scale = 2.0
+
+[node name="DirectionalLight2D" parent="." index="7" unique_id=1799863432]
+color = Color(0.49530232, 0.41041067, 0.018014763, 1)
+energy = 1.0
+
+[node name="ExitGateArea" type="Area2D" parent="." index="8" unique_id=584673793]
+position = Vector2(2016, -160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=1110067776]
+position = Vector2(131.25, -14)
+shape = SubResource("RectangleShape2D_vd7ja")
+
+[connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

@@ -1,5 +1,7 @@
 extends Main
 
+@onready var player_camera: Camera2D = %PlayerCamera
+
 
 func _on_gate_player_entered_gate(_body: Node2D) -> void:
 	var tween = self.get_tree().create_tween()
