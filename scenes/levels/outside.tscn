@@ -176,6 +176,10 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(1005, 736)
 scale = Vector2(0.3, 0.3)
 
+[node name="Player" parent="." index="3" unique_id=1222607543]
+position = Vector2(530, 670)
+rotation = 1.4922565
+
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]
