@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-@export var speed :=  750
+@export var speed : int
  
 
 func explode():

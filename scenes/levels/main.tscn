@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxar77cn0fe4k" path="res://scenes/levels/main.gd" id="1_y0acb"]
 [ext_resource type="PackedScene" uid="uid://w8l2khf6llpe" path="res://scenes/player/player.tscn" id="2_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://br6xcoptyevlh" path="res://scenes/levels/ui.tscn" id="3_y0acb"]
 
 [node name="Main" type="Node" unique_id=1738811471]
 script = ExtResource("1_y0acb")
@@ -30,6 +31,8 @@ position_smoothing_enabled = true
 color = Color(0.05089091, 0.05089091, 0.05089091, 1)
 energy = 2.0
 blend_mode = 1
+
+[node name="UI" parent="." unique_id=268640743 instance=ExtResource("3_y0acb")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

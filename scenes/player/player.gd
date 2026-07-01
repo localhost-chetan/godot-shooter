@@ -30,13 +30,15 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	var player_direction = (self.get_global_mouse_position() - self.global_position).normalized()     
 	
-	if (Input.is_action_pressed("primary action") and can_laser):
+	if (Input.is_action_pressed("primary action") and can_laser and Globals.laser_count > 0):
+		Globals.laser_count -= 1
 		gpu_particles_2d.emitting = true
-		can_laser = false 
+		can_laser = false     
 		laser_timer.start() 
 		laser.emit(get_random_marker_position(), player_direction)
 		
-	if (Input.is_action_pressed("secondary action") and can_grenade):
+	if (Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_count > 0):
+		Globals.grenade_count -= 1
 		can_grenade = false
 		grenade_reload_timer.start()
 		grenade.emit(get_random_marker_position(), player_direction)
