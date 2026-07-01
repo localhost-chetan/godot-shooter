@@ -18,9 +18,12 @@ emission_shape = 1
 emission_sphere_radius = 64.43
 angle_min = 1.0728835e-05
 angle_max = 1.0728835e-05
-radial_velocity_min = -2.2351742e-05
-radial_velocity_max = 14.229978
+spread = 0.0
 gravity = Vector3(100, -150, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
 scale_max = 2.5
 color = Color(0.7919991, 0.79199916, 0.7919991, 1)
 color_ramp = SubResource("GradientTexture1D_2mcvv")
@@ -35,7 +38,7 @@ texture = ExtResource("1_tsb1a")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1187255097]
 amount = 150
-amount_ratio = 0.75
 texture = ExtResource("2_2mcvv")
 lifetime = 1.55
+randomness = 0.29
 process_material = SubResource("ParticleProcessMaterial_vd7ja")

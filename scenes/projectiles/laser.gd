@@ -14,8 +14,6 @@ func _process(delta: float) -> void:
 	 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Collision with ", body)
-	
 	if ("hit" in body):
 		body.hit() 
 	self.queue_free()

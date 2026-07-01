@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://euu85vmth3io" path="res://scenes/objects/drone.tscn" id="14_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://celaaf8aca170" path="res://scenes/objects/toilet.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://d34t1wm0fmjc8" path="res://scenes/objects/crate.tscn" id="17_uaeil"]
+[ext_resource type="PackedScene" uid="uid://br6xcoptyevlh" path="res://scenes/levels/ui.tscn" id="18_bjulg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 texture = ExtResource("8_uaeil")
@@ -179,6 +180,8 @@ scale = Vector2(0.3, 0.3)
 [node name="Player" parent="." index="3" unique_id=1222607543]
 position = Vector2(530, 670)
 rotation = 1.4922565
+
+[node name="UI" parent="." index="5" unique_id=268640743 instance=ExtResource("18_bjulg")]
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
