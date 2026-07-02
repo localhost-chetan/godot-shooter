@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c1xucphiq8u10" path="res://scenes/objects/house.tscn" id="12_qvsb0"]
 [ext_resource type="PackedScene" uid="uid://bk8qp8ruk0rs6" path="res://scenes/objects/light_fan_animation.tscn" id="13_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://euu85vmth3io" path="res://scenes/objects/drone.tscn" id="14_xqqjy"]
+[ext_resource type="PackedScene" uid="uid://dkxwv5x6ns3x0" path="res://scenes/items/item.tscn" id="15_bjulg"]
 [ext_resource type="PackedScene" uid="uid://celaaf8aca170" path="res://scenes/objects/toilet.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://d34t1wm0fmjc8" path="res://scenes/objects/crate.tscn" id="17_uaeil"]
 
@@ -164,15 +165,18 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Objects" type="Node" parent="." index="2" unique_id=448758656]
 
-[node name="Toilet" parent="Objects" index="0" unique_id=983980978 instance=ExtResource("16_x30qc")]
+[node name="Item" parent="Objects" index="0" unique_id=1753551191 instance=ExtResource("15_bjulg")]
+position = Vector2(520, 865)
+
+[node name="Toilet" parent="Objects" index="1" unique_id=983980978 instance=ExtResource("16_x30qc")]
 position = Vector2(845, 896)
 scale = Vector2(0.25, 0.25)
 
-[node name="Drone" parent="Objects" index="1" unique_id=45742356 instance=ExtResource("14_xqqjy")]
+[node name="Drone" parent="Objects" index="2" unique_id=45742356 instance=ExtResource("14_xqqjy")]
 position = Vector2(-104, 646)
 scale = Vector2(0.25, 0.25)
 
-[node name="Crate" parent="Objects" index="2" unique_id=1013318759 instance=ExtResource("17_uaeil")]
+[node name="Crate" parent="Objects" index="3" unique_id=1013318759 instance=ExtResource("17_uaeil")]
 position = Vector2(1005, 736)
 scale = Vector2(0.3, 0.3)
 

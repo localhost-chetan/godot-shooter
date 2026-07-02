@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal laser(player_position: Vector2, player_direction: Vector2)
 signal grenade(player_position: Vector2, player_direction: Vector2)
-   
+signal update_stats()
 
 var direction: Vector2
 @export var speed := 250
@@ -50,3 +50,13 @@ func _on_laser_timer_timeout() -> void:
 
 func _on_grenade_reload_timer_timeout() -> void:
 	can_grenade = true
+
+	
+func add_item(type: Global.ItemType) -> void:
+	const ItemType := Global.ItemType
+
+	if (type == ItemType.laser):
+		Globals.laser_count += 5
+	elif (type == ItemType.grenade):
+		Globals.grenade_count += 1
+	update_stats.emit()		

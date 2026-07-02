@@ -31,8 +31,10 @@ position_smoothing_enabled = true
 color = Color(0.05089091, 0.05089091, 0.05089091, 1)
 energy = 2.0
 blend_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="UI" parent="." unique_id=268640743 instance=ExtResource("3_y0acb")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
+[connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
