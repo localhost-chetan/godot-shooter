@@ -23,8 +23,3 @@ func _on_player_grenade(player_position: Vector2, player_direction: Vector2) -> 
 	grenade.linear_velocity = player_direction * grenade.speed
 	projectiles.add_child(grenade)
 	ui.update_grenade_text()
-
-
-func _on_player_update_stats() -> void:
-	ui.update_laser_text()
-	ui.update_grenade_text()

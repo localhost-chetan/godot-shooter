@@ -5,6 +5,7 @@ extends CanvasLayer
 
 @onready var grenade_label: Label = %GrenadeLabel
 @onready var grenade_texture: TextureRect = %GrenadeTexture
+@onready var health_progress_bar: TextureProgressBar = %HealthProgressBar
 
 
 const green := Color("27ff70")
@@ -13,9 +14,8 @@ const red := Color("db3916")
 
 
 func _ready():
-	update_laser_text()
-	update_grenade_text()
-	
+	Globals.connect("stat_change", update_stat_text)
+	update_stat_text()
 
 func update_color(amount:int, half_amount:int, label:Label, icon:TextureRect) -> void:
 	if (amount <= 0):  
@@ -44,3 +44,13 @@ func update_grenade_text():
 	var grenade_count := Globals.grenade_count
 	grenade_label.text = str(grenade_count)
 	update_color(grenade_count, get_half_amount(Globals.MAX_GRENADE_COUNT), grenade_label, grenade_texture)
+
+
+func update_health_text():
+	health_progress_bar.value = Globals.health
+
+
+func update_stat_text():
+	update_laser_text()
+	update_grenade_text()
+	update_health_text()
