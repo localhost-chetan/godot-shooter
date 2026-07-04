@@ -9,6 +9,7 @@
 radius = 102.46964
 
 [node name="Toilet" unique_id=983980978 instance=ExtResource("1_gxs1e")]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("2_2asns")
 
 [node name="BaseSprite" parent="." index="0" unique_id=1203356432]

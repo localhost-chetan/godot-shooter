@@ -28,7 +28,6 @@ func _on_player_laser(player_position: Vector2, player_direction: Vector2) -> vo
 	laser.direction = player_direction
 	laser.rotation_degrees = rad_to_deg(player_direction.angle()) + 90
 	projectiles.add_child(laser)
-	ui.update_laser_text()
 
 
 func _on_player_grenade(player_position: Vector2, player_direction: Vector2) -> void:
@@ -36,4 +35,3 @@ func _on_player_grenade(player_position: Vector2, player_direction: Vector2) -> 
 	grenade.position = player_position
 	grenade.linear_velocity = player_direction * grenade.speed
 	projectiles.add_child(grenade)
-	ui.update_grenade_text()

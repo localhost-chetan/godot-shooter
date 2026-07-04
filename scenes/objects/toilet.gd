@@ -3,10 +3,12 @@ extends ItemContainer
 var max_available_items := 1
 
 
-func hit() -> void:
+func _ready():
 	if (OS.is_debug_build()):
 		print("max_available_items ", max_available_items)
-	
+		
+
+func hit() -> void:
 	if (max_available_items >= 1):
 		print("Toilet")
 		

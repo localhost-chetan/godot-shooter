@@ -2,9 +2,11 @@ extends ItemContainer
 
 var max_available_items := randi_range(3, 10)
 
-func hit():
+func _ready():
 	if (OS.is_debug_build()):
 		print("max_available_items ", max_available_items)
+
+func hit():
 	
 	if (max_available_items >= 1):
 		$LidSprite.hide()

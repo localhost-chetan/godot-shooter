@@ -185,7 +185,6 @@ scale = Vector2(0.3288117, 0.3288117)
 [node name="Toilet" parent="Objects" index="4" unique_id=898892724 instance=ExtResource("16_x30qc")]
 position = Vector2(768, 864.99994)
 rotation = -0.027100563
-scale = Vector2(0.37038732, 0.37038732)
 
 [node name="Toilet2" parent="Objects" index="5" unique_id=1046419174 instance=ExtResource("16_x30qc")]
 position = Vector2(404.00006, 835.00006)
