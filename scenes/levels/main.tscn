@@ -10,6 +10,9 @@ script = ExtResource("1_y0acb")
 [node name="Projectiles" type="Node" parent="." unique_id=1127724143]
 unique_name_in_owner = true
 
+[node name="Items" type="Node" parent="." unique_id=1662815631]
+unique_name_in_owner = true
+
 [node name="Player" parent="." unique_id=1222607543 instance=ExtResource("2_2vj2h")]
 unique_name_in_owner = true
 position = Vector2(471, 705)

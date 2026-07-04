@@ -6,6 +6,8 @@ var rotation_speed := 4
 const ItemType := Global.ItemType
 var available_options := [ItemType.laser, ItemType.grenade, ItemType.health]
 var type :int = available_options.pick_random()
+var direction : Vector2
+var distance := randi_range(70, 100)
 
 
 func _ready():    
@@ -17,9 +19,14 @@ func _ready():
 		$Sprite2D.self_modulate = Color("33fd09")
 	else:
 		$Sprite2D.self_modulate = Color("ffffff")
-		
 	
-
+	var target_position := self.position + (direction * distance)
+	var tween := self.get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "position", target_position, 0.5).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "scale", Vector2(0.35, 0.35), 0.45).from(Vector2(0, 0))
+	
+	
 func _process(delta: float) -> void:
 	self.rotation += rotation_speed * delta
 

@@ -11,11 +11,50 @@ size = Vector2(404, 148.33333)
 [node name="Crate" unique_id=983980978 instance=ExtResource("1_yourn")]
 script = ExtResource("2_ls5c6")
 
-[node name="Sprite2D" parent="." index="0" unique_id=1203356432]
+[node name="BaseSprite" parent="." index="0" unique_id=1203356432]
 texture = ExtResource("3_xu5n6")
 
-[node name="Lid" type="Sprite2D" parent="." index="1" unique_id=576057687]
+[node name="LidSprite" parent="." index="1" unique_id=1409634912]
 texture = ExtResource("4_m8sg4")
 
-[node name="CollisionShape2D" parent="." index="2" unique_id=388879022]
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="0" unique_id=518085654]
+position = Vector2(-145, -44.166664)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="1" unique_id=2144574574]
+position = Vector2(-95, -38.333332)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="2" unique_id=42150837]
+position = Vector2(-145, 9.166668)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="3" unique_id=1165898285]
+position = Vector2(-91, 21.666666)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="4" unique_id=1158072177]
+position = Vector2(-51, -16.666666)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="5" unique_id=1670969867]
+position = Vector2(-35, 25.833334)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="6" unique_id=14719998]
+position = Vector2(25, -11.666666)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="7" unique_id=628292493]
+position = Vector2(-9, -48.33333)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="8" unique_id=454369461]
+position = Vector2(39, 17.5)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="9" unique_id=1658485377]
+position = Vector2(84, 0)
+
+[node name="Marker2D11" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="10" unique_id=1061950241]
+position = Vector2(68, -38.333332)
+
+[node name="Marker2D12" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="11" unique_id=838031663]
+position = Vector2(113, -33.333332)
+
+[node name="Marker2D13" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(119874278) index="12" unique_id=927519550]
+position = Vector2(132, 9.166668)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=388879022]
 shape = SubResource("RectangleShape2D_vd7ja")

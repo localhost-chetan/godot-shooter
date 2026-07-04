@@ -1,5 +1,4 @@
-@abstract
 class_name ItemContainer extends StaticBody2D
+signal open(pos, direction) 
 
-@abstract
-func hit() -> void
+@onready var current_direction := Vector2.DOWN.rotated(rotation)
