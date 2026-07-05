@@ -3,11 +3,15 @@ extends CharacterBody2D
 signal laser(scout_position: Vector2, scout_direction: Vector2)
 
 
+var health := 30
+
 var is_player_nearby := false
 var can_laser := true
+var is_vulnerable := true
 @export var speed : int
 @onready var laser_cooldown: Timer = %LaserCooldown
 @onready var laser_spawn_positions: Node2D = %LaserSpawnPositions
+@onready var hit_timer: Timer = %HitTimer
 
 
 func _physics_process(_delta: float) -> void:
@@ -40,4 +44,14 @@ func _on_laser_cooldown_timeout() -> void:
 	
 
 func hit():
-	print("Scout damaged")
+	if (is_vulnerable):
+		health -= randi_range(2, 7)
+		is_vulnerable = false
+		hit_timer.start()
+	
+	if (health <= 0):
+		self.queue_free()
+
+
+func _on_hit_timer_timeout() -> void:
+	is_vulnerable = true

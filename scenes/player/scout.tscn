@@ -40,10 +40,18 @@ position = Vector2(120, -26)
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions" unique_id=1798785237]
 position = Vector2(130, 12)
 
-[node name="LaserCooldown" type="Timer" parent="." unique_id=417110284]
+[node name="Timers" type="Node" parent="." unique_id=1525287261]
+
+[node name="LaserCooldown" type="Timer" parent="Timers" unique_id=417110284]
 unique_name_in_owner = true
 wait_time = 0.2
 
+[node name="HitTimer" type="Timer" parent="Timers" unique_id=1884049235]
+unique_name_in_owner = true
+wait_time = 0.35
+one_shot = true
+
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
-[connection signal="timeout" from="LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
+[connection signal="timeout" from="Timers/LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="_on_hit_timer_timeout"]
