@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cvppk8o5j668r"]
+
+[ext_resource type="Script" uid="uid://b7vl74ow80k3x" path="res://scenes/player/scout.gd" id="1_2j1ud"]
+[ext_resource type="Texture2D" uid="uid://dodurqyroyjnx" path="res://graphics/enemies/scout.png" id="1_8u3o6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd7ja"]
+radius = 49.497475
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
+radius = 998.07214
+
+[node name="Scout" type="CharacterBody2D" unique_id=1422624982 groups=["Scouts"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_2j1ud")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414765212]
+rotation = 1.5707964
+texture = ExtResource("1_8u3o6")
+offset = Vector2(27, -44)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893205837]
+shape = SubResource("CircleShape2D_vd7ja")
+metadata/_edit_lock_ = true
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1051311688]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2056765082]
+shape = SubResource("CircleShape2D_jvku2")
+
+[node name="LaserSpawnPositions" type="Node2D" parent="." unique_id=952650035]
+unique_name_in_owner = true
+
+[node name="Marker2D" type="Marker2D" parent="LaserSpawnPositions" unique_id=1642325448]
+position = Vector2(120, -26)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions" unique_id=1798785237]
+position = Vector2(130, 12)
+
+[node name="LaserCooldown" type="Timer" parent="." unique_id=417110284]
+unique_name_in_owner = true
+wait_time = 0.2
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="LaserCooldown" to="." method="_on_laser_cooldown_timeout"]

@@ -26,3 +26,5 @@ enum ItemType {
 	grenade,
 	health
 }
+
+var player_position : Vector2

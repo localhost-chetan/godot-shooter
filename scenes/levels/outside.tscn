@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxwv5x6ns3x0" path="res://scenes/items/item.tscn" id="15_bjulg"]
 [ext_resource type="PackedScene" uid="uid://celaaf8aca170" path="res://scenes/objects/toilet.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://d34t1wm0fmjc8" path="res://scenes/objects/crate.tscn" id="17_uaeil"]
+[ext_resource type="PackedScene" uid="uid://cvppk8o5j668r" path="res://scenes/player/scout.tscn" id="19_gd7nx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 texture = ExtResource("8_uaeil")
@@ -191,7 +192,10 @@ position = Vector2(404.00006, 835.00006)
 rotation = -2.2736814
 scale = Vector2(0.37038732, 0.37038732)
 
-[node name="Player" parent="." index="4" unique_id=1222607543]
+[node name="Scout" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="0" unique_id=1422624982 instance=ExtResource("19_gd7nx")]
+position = Vector2(766.19995, 702)
+
+[node name="Player" parent="." index="5" unique_id=1222607543]
 position = Vector2(530, 670)
 rotation = 1.4922565
 
