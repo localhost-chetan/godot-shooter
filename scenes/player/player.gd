@@ -54,4 +54,4 @@ func _on_grenade_reload_timer_timeout() -> void:
 
 
 func hit():
-	print("Player Damaged")
+	Globals.health -= randi_range(5, 15)
