@@ -9,11 +9,12 @@ radius = 49.497475
 [sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
 radius = 998.07214
 
-[node name="Scout" type="CharacterBody2D" unique_id=1422624982 groups=["Scouts"]]
+[node name="Scout" type="CharacterBody2D" unique_id=1422624982 groups=["Entity", "Scouts"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_2j1ud")
+speed = 85
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414765212]
 rotation = 1.5707964

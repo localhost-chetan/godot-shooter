@@ -16,6 +16,7 @@ func _ready():
 	for scout in get_tree().get_nodes_in_group("Scouts"):
 		scout.connect("laser", _on_scout_laser)
 
+
 func _on_container_opened(pos: Vector2, direction: Vector2):
 	var item := item_scene.instantiate() as Area2D
 	item.position = pos
@@ -29,6 +30,7 @@ func create_laser(pos: Vector2, direction: Vector2):
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	projectiles.add_child(laser)
+
 
 func _on_player_laser(player_position: Vector2, player_direction: Vector2) -> void:
 	create_laser(player_position, player_direction)
