@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b7vl74ow80k3x" path="res://scenes/player/scout.gd" id="1_2j1ud"]
 [ext_resource type="Texture2D" uid="uid://dodurqyroyjnx" path="res://graphics/enemies/scout.png" id="1_8u3o6"]
+[ext_resource type="Shader" uid="uid://05x37dniv0e2" path="res://scenes/player/scout.gdshader" id="2_tjioi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd7ja"]
 radius = 49.497475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmlin"]
+shader = ExtResource("2_tjioi")
+shader_parameter/color = Color(1.606, 0.02, 0.121, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
 radius = 998.07214
@@ -16,17 +22,20 @@ collision_mask = 15
 script = ExtResource("1_2j1ud")
 speed = 85
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893205837]
+visible = false
+shape = SubResource("CircleShape2D_vd7ja")
+metadata/_edit_lock_ = true
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414765212]
+material = SubResource("ShaderMaterial_gmlin")
 rotation = 1.5707964
 texture = ExtResource("1_8u3o6")
 offset = Vector2(27, -44)
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893205837]
-shape = SubResource("CircleShape2D_vd7ja")
-metadata/_edit_lock_ = true
-
 [node name="AttackArea" type="Area2D" parent="." unique_id=1051311688]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2056765082]
 shape = SubResource("CircleShape2D_jvku2")
@@ -48,7 +57,7 @@ wait_time = 0.2
 
 [node name="HitTimer" type="Timer" parent="Timers" unique_id=1884049235]
 unique_name_in_owner = true
-wait_time = 0.35
+wait_time = 0.2
 one_shot = true
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

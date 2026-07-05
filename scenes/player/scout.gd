@@ -12,6 +12,7 @@ var is_vulnerable := true
 @onready var laser_cooldown: Timer = %LaserCooldown
 @onready var laser_spawn_positions: Node2D = %LaserSpawnPositions
 @onready var hit_timer: Timer = %HitTimer
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _physics_process(_delta: float) -> void:
@@ -48,10 +49,12 @@ func hit():
 		health -= randi_range(2, 7)
 		is_vulnerable = false
 		hit_timer.start()
-	
+		sprite_2d.material.set_shader_parameter("progress", 1)
+		
 	if (health <= 0):
 		self.queue_free()
 
 
 func _on_hit_timer_timeout() -> void:
 	is_vulnerable = true
+	sprite_2d.material.set_shader_parameter("progress", 0)
