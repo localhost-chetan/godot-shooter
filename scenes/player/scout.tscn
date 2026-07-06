@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7vl74ow80k3x" path="res://scenes/player/scout.gd" id="1_2j1ud"]
 [ext_resource type="Texture2D" uid="uid://dodurqyroyjnx" path="res://graphics/enemies/scout.png" id="1_8u3o6"]
-[ext_resource type="Shader" uid="uid://05x37dniv0e2" path="res://scenes/player/scout.gdshader" id="2_tjioi"]
+[ext_resource type="Shader" uid="uid://05x37dniv0e2" path="res://scenes/player/hit_flash.gdshader" id="2_tjioi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd7ja"]
 radius = 49.497475
@@ -13,7 +13,7 @@ shader_parameter/color = Color(1.606, 0.02, 0.121, 1)
 shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
-radius = 998.07214
+radius = 918.6294
 
 [node name="Scout" type="CharacterBody2D" unique_id=1422624982 groups=["Entity", "Scouts"]]
 scale = Vector2(0.5, 0.5)
@@ -23,7 +23,6 @@ script = ExtResource("1_2j1ud")
 speed = 85
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893205837]
-visible = false
 shape = SubResource("CircleShape2D_vd7ja")
 metadata/_edit_lock_ = true
 
@@ -35,7 +34,7 @@ offset = Vector2(27, -44)
 metadata/_edit_lock_ = true
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1051311688]
-visible = false
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2056765082]
 shape = SubResource("CircleShape2D_jvku2")

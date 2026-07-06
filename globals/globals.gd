@@ -19,20 +19,20 @@ var grenade_count := MAX_GRENADE_COUNT:
 
 
 var is_player_vulnerable := true
-var health := 100:
+var player_health := 100:
 	set(value):
-		if (value > health):
-			health = min(value, 100)
+		if (value > player_health):
+			player_health = min(value, 100)
 			
 		elif (is_player_vulnerable):
-			health = value
+			player_health = value
 			is_player_vulnerable = false
-			player_invulnerable_timer()		# Invulnerability frame (mercy rule)
+			start_invulnerability()		# Invulnerability frame (mercy rule)
 			
 		stat_change.emit()
 	
  
-func player_invulnerable_timer():
+func start_invulnerability():
 	await get_tree().create_timer(0.5).timeout
 	is_player_vulnerable = true
 	

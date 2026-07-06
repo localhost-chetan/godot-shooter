@@ -3,5 +3,5 @@ extends Main
 
 func _on_exit_gate_area_body_entered(_body: Node2D) -> void:
 	var tween = self.get_tree().create_tween()
-	tween.tween_property(%Player, "speed", 0, 0.3)
+	tween.tween_property(%Player, "move_speed", 0, 0.3)
 	TransitionLayer.change_scene.call_deferred("res://scenes/levels/outside.tscn")

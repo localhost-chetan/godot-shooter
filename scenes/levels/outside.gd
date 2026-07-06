@@ -5,7 +5,7 @@ extends Main
 
 func _on_gate_player_entered_gate(_body: Node2D) -> void:
 	var tween = self.get_tree().create_tween()
-	tween.tween_property(%Player, "speed", 0, 0.38)
+	tween.tween_property(%Player, "move_speed", 0, 0.38)
 	TransitionLayer.change_scene.call_deferred("res://scenes/levels/inside.tscn")
 
 

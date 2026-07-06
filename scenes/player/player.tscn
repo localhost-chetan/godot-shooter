@@ -32,7 +32,6 @@ polygon = PackedVector2Array(-14, 56, -24, 63, -33, 67, -47, 68, -61, 65, -65, 5
 [node name="Player" type="CharacterBody2D" unique_id=1222607543 groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_dovo2")
-speed = 270
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=87205123]
 position = Vector2(-39, 9)
@@ -46,26 +45,26 @@ metadata/_edit_lock_ = true
 
 [node name="Timers" type="Node" parent="." unique_id=197768447]
 
-[node name="LaserTimer" type="Timer" parent="Timers" unique_id=1661260579]
+[node name="LaserCooldownTimer" type="Timer" parent="Timers" unique_id=1661260579]
 unique_name_in_owner = true
 wait_time = 0.2
 
-[node name="GrenadeReloadTimer" type="Timer" parent="Timers" unique_id=1615429821]
+[node name="GrenadeCooldownTimer" type="Timer" parent="Timers" unique_id=1615429821]
 unique_name_in_owner = true
 wait_time = 0.2
 
-[node name="LaserStartPositions" type="Node2D" parent="." unique_id=444227404]
+[node name="LaserSpawnPositions" type="Node2D" parent="." unique_id=444227404]
 
-[node name="Marker2D" type="Marker2D" parent="LaserStartPositions" unique_id=1157268826]
+[node name="Marker2D" type="Marker2D" parent="LaserSpawnPositions" unique_id=1157268826]
 position = Vector2(90, -3)
 
-[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions" unique_id=590959322]
+[node name="Marker2D3" type="Marker2D" parent="LaserSpawnPositions" unique_id=590959322]
 position = Vector2(96, 3)
 
-[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions" unique_id=698917917]
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions" unique_id=698917917]
 position = Vector2(93, 9)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1997449198]
+[node name="ShootParticles" type="GPUParticles2D" parent="." unique_id=1997449198]
 position = Vector2(96, 3)
 emitting = false
 amount = 10
@@ -77,5 +76,5 @@ process_material = SubResource("ParticleProcessMaterial_vd7ja")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=975338965]
 occluder = SubResource("OccluderPolygon2D_vd7ja")
 
-[connection signal="timeout" from="Timers/LaserTimer" to="." method="_on_laser_timer_timeout"]
-[connection signal="timeout" from="Timers/GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
+[connection signal="timeout" from="Timers/LaserCooldownTimer" to="." method="_on_laser_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/GrenadeCooldownTimer" to="." method="_on_grenade_cooldown_timer_timeout"]

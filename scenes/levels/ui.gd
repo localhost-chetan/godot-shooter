@@ -47,7 +47,7 @@ func update_grenade_text():
 
 
 func update_health_text():
-	health_progress_bar.value = Globals.health
+	health_progress_bar.value = Globals.player_health
 
 
 func update_stat_text():

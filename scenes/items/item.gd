@@ -37,6 +37,6 @@ func _on_body_entered(_body: Node2D) -> void:
 	elif (type == ItemType.grenade):
 		Globals.grenade_count += 1
 	elif (type == ItemType.health):
-		Globals.health += 10
+		Globals.player_health += randi_range(10, 20)
 		
 	self.queue_free()

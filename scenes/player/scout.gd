@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal laser(scout_position: Vector2, scout_direction: Vector2)
 
 
-var health := 30
+var health := 100
 
 var is_player_nearby := false
 var can_laser := true
