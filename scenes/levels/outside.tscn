@@ -170,25 +170,21 @@ scale = Vector2(0.75, 0.75)
 [node name="Item" parent="Objects" index="0" unique_id=1753551191 instance=ExtResource("15_bjulg")]
 position = Vector2(520, 865)
 
-[node name="Drone" parent="Objects" index="1" unique_id=45742356 instance=ExtResource("14_xqqjy")]
-position = Vector2(-104, 646)
-scale = Vector2(0.25, 0.25)
-
-[node name="Crate" parent="Objects" index="2" unique_id=1247150164 instance=ExtResource("17_uaeil")]
+[node name="Crate" parent="Objects" index="1" unique_id=1247150164 instance=ExtResource("17_uaeil")]
 position = Vector2(1004, 749)
 rotation = 2.0191965
 scale = Vector2(0.3288117, 0.3288117)
 
-[node name="Crate2" parent="Objects" index="3" unique_id=983980978 instance=ExtResource("17_uaeil")]
+[node name="Crate2" parent="Objects" index="2" unique_id=983980978 instance=ExtResource("17_uaeil")]
 position = Vector2(932.99994, 914.00006)
 rotation = 0.0559901
 scale = Vector2(0.3288117, 0.3288117)
 
-[node name="Toilet" parent="Objects" index="4" unique_id=898892724 instance=ExtResource("16_x30qc")]
+[node name="Toilet" parent="Objects" index="3" unique_id=898892724 instance=ExtResource("16_x30qc")]
 position = Vector2(768, 864.99994)
 rotation = -0.027100563
 
-[node name="Toilet2" parent="Objects" index="5" unique_id=1046419174 instance=ExtResource("16_x30qc")]
+[node name="Toilet2" parent="Objects" index="4" unique_id=1046419174 instance=ExtResource("16_x30qc")]
 position = Vector2(404.00006, 835.00006)
 rotation = -2.2736814
 scale = Vector2(0.37038732, 0.37038732)
@@ -198,6 +194,10 @@ position = Vector2(1306.2, 970)
 
 [node name="Bug" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="1" unique_id=2041820148 instance=ExtResource("20_4lnny")]
 position = Vector2(1409.6, 1550.3999)
+
+[node name="Drone" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="2" unique_id=45742356 instance=ExtResource("14_xqqjy")]
+position = Vector2(375.1999, 1187.5999)
+scale = Vector2(0.25, 0.25)
 
 [node name="Player" parent="." index="5" unique_id=1222607543]
 position = Vector2(530, 670)

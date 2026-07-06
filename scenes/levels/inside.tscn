@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bn3saxtb3peig" path="res://scenes/objects/bed.tscn" id="14_o1nno"]
 [ext_resource type="Texture2D" uid="uid://bcwjqri7a8r4p" path="res://graphics/decals/brushes/brush045.png" id="16_yj2co"]
 [ext_resource type="Texture2D" uid="uid://f8dgaourlipo" path="res://graphics/decals/brushes/brush051.png" id="17_fa7mw"]
+[ext_resource type="PackedScene" uid="uid://euu85vmth3io" path="res://scenes/objects/drone.tscn" id="18_ij657"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yj2co"]
 load_path = "res://.godot/imported/brush048.png-0ad36b2022a6073d6e08e46ac5da8010.ctex"
@@ -236,7 +237,34 @@ position = Vector2(1622.0001, -115.99997)
 scale = Vector2(1.4722546, 1.4722546)
 texture = ExtResource("17_fa7mw")
 
-[node name="Player" parent="." index="10" unique_id=1222607543]
+[node name="Drone" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="0" unique_id=1695847280 instance=ExtResource("18_ij657")]
+position = Vector2(917, -497)
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone2" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="1" unique_id=1400330157 instance=ExtResource("18_ij657")]
+position = Vector2(-559, 19)
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone4" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="2" unique_id=230650444 instance=ExtResource("18_ij657")]
+position = Vector2(-1694, 264)
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone5" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="3" unique_id=1184972915 instance=ExtResource("18_ij657")]
+position = Vector2(-748, 1183)
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone3" parent="Enemies" parent_id_path=PackedInt32Array(889004354) index="4" unique_id=318786917 instance=ExtResource("18_ij657")]
+position = Vector2(883, 710)
+scale = Vector2(0.5, 0.5)
+
+[node name="ExitGateArea" type="Area2D" parent="." index="11" unique_id=584673793]
+position = Vector2(2016, -160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=1110067776]
+position = Vector2(131.25, -14)
+shape = SubResource("RectangleShape2D_vd7ja")
+
+[node name="Player" parent="." index="12" unique_id=1222607543]
 position = Vector2(1920.9999, -115.99994)
 
 [node name="PlayerCamera" parent="Player" index="6" unique_id=676111694]
@@ -247,14 +275,7 @@ energy = 2.0
 texture = ExtResource("11_tkhku")
 texture_scale = 2.0
 
-[node name="ExitGateArea" type="Area2D" parent="." index="11" unique_id=584673793]
-position = Vector2(2016, -160)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=1110067776]
-position = Vector2(131.25, -14)
-shape = SubResource("RectangleShape2D_vd7ja")
-
-[node name="DirectionalLight2D" parent="." index="12" unique_id=1799863432]
+[node name="DirectionalLight2D" parent="." index="13" unique_id=1799863432]
 color = Color(0.49530232, 0.41041067, 0.018014763, 1)
 energy = 1.0
 
