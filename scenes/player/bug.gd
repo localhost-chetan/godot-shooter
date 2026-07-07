@@ -9,7 +9,7 @@ var is_vulnerable := true
 var health := 100
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_timer: Timer = %HitTimer
-@onready var attack_timer: Timer = %AttackTimerwwwwwwww
+@onready var attack_timer: Timer = %AttackTimer
 
 
 func _physics_process(_delta: float) -> void:

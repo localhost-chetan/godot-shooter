@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://cuwc568w5r1xv"]
+
+[ext_resource type="Texture2D" uid="uid://bo3ii50hse6kd" path="res://graphics/car/main.png" id="1_bqh2d"]
+[ext_resource type="Texture2D" uid="uid://bc1232tukt0sm" path="res://graphics/car/turret.png" id="2_0bhpr"]
+[ext_resource type="Script" uid="uid://c1c6jhmuryikd" path="res://scenes/levels/car_tracking.gd" id="3_wnx1p"]
+[ext_resource type="Texture2D" uid="uid://wfdgkkesmhyk" path="res://graphics/explosions/gun.png" id="4_wnx1p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
+radius = 678.8279
+
+[sub_resource type="Animation" id="Animation_ihng0"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_wnx1p"]
+resource_name = "laser_load"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/Turret/Laser1/LaserLine1:width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 10.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/Turret/Laser2/LaserLine2:width")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 10.0, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uydlq"]
+_data = {
+&"RESET": SubResource("Animation_ihng0"),
+&"laser_load": SubResource("Animation_wnx1p")
+}
+
+[node name="Car" type="PathFollow2D" unique_id=1516327136]
+progress = 4424.1143
+script = ExtResource("3_wnx1p")
+metadata/_edit_vertical_guides_ = [-57.333694]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1411371257]
+collision_layer = 16
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=936272175]
+shape = SubResource("CircleShape2D_jvku2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=242165332]
+collision_layer = 2
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1305959397]
+polygon = PackedVector2Array(-227.79999, -114.84999, -227.79999, -174.04999, -164.6, -187.65, -100.600006, -178.84999, -74.20001, -149.25, -63.80002, -140.45, -36.600006, -140.45, -14.200012, -133.25, -3, -141.25, 5.799988, -171.65, 29.799957, -182.04999, 79.399994, -183.65, 101.79996, -178.84999, 127.399994, -173.25, 151.4, -158.04999, 173.79996, -122.05, 179.4, -102.04999, 196.19998, -73.25, 188.99997, -51.649994, 192.99997, -35.649994, 196.19998, -8.450012, 198.6, 23.549988, 190.6, 35.549988, 186.6, 45.149994, 196.99997, 67.54999, 196.99997, 81.94998, 192.19998, 94.75, 184.99997, 98.75, 174.6, 138.75, 154.6, 156.35, 128.99997, 161.94998, 94.600006, 169.94998, 68.19998, 172.35, 36.99997, 172.35, 1.7999878, 165.94998, -10.200012, 125.149994, -39, 131.54999, -59.80002, 129.94998, -79, 113.94998, -82.20001, 150.74997, -88.600006, 170.74997, -102.20001, 181.15, -131, 185.15, -171, 189.15, -201.4, 184.35, -235, 174.74997, -240.6, 135.54999, -240.6, 108.349976, -227, 93.94998, -234.20001, 77.94998, -242.20001, 56.350006, -265.4, 50.75, -290.2, 51.549988, -300.59998, 30.75, -304.59998, 1.1499939, -303, -23.649994, -299.8, -44.450012, -282.2, -59.649994, -258.2, -64.45001, -235, -61.25, -231.79999, -78.850006, -217.4, -87.649994)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1298391013]
+rotation = 1.5707964
+texture = ExtResource("1_bqh2d")
+metadata/_edit_lock_ = true
+
+[node name="Turret" type="Node2D" parent="CharacterBody2D" unique_id=689675635]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Turret" unique_id=430643668]
+rotation = 1.5707964
+texture = ExtResource("2_0bhpr")
+metadata/_edit_lock_ = true
+
+[node name="Laser1" type="RayCast2D" parent="CharacterBody2D/Turret" unique_id=2062481067]
+unique_name_in_owner = true
+position = Vector2(112.14692, -26.691935)
+scale = Vector2(5.32, 1)
+target_position = Vector2(106.19998, 0.19999695)
+collision_mask = 15
+
+[node name="LaserLine1" type="Line2D" parent="CharacterBody2D/Turret/Laser1" unique_id=344706394]
+unique_name_in_owner = true
+position = Vector2(0.039228283, 0.41738892)
+points = PackedVector2Array(-0.02010727, -0.42809868)
+width = 0.0
+default_color = Color(1, 0.3019608, 0.25490198, 0.8392157)
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Laser2" type="RayCast2D" parent="CharacterBody2D/Turret" unique_id=759088645]
+unique_name_in_owner = true
+position = Vector2(111.799995, 30.199999)
+scale = Vector2(5.3200016, 1)
+target_position = Vector2(106.19998, 0.19999695)
+collision_mask = 15
+
+[node name="LaserLine2" type="Line2D" parent="CharacterBody2D/Turret/Laser2" unique_id=1238496537]
+unique_name_in_owner = true
+position = Vector2(0.03470226, 0.67692375)
+points = PackedVector2Array(-0.015045166, -0.6800289)
+width = 0.0
+default_color = Color(1, 0.3019608, 0.25490198, 0.8392157)
+antialiased = true
+
+[node name="GunFire1" type="Sprite2D" parent="CharacterBody2D/Turret" unique_id=1512338371]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(165.2, -26.799988)
+rotation = 1.5707964
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_wnx1p")
+
+[node name="GunFire2" type="Sprite2D" parent="CharacterBody2D/Turret" unique_id=582305367]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(165.2, 28.000015)
+rotation = 1.5707964
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_wnx1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=648253990]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_uydlq")
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

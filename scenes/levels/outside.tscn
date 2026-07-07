@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d34t1wm0fmjc8" path="res://scenes/objects/crate.tscn" id="17_uaeil"]
 [ext_resource type="PackedScene" uid="uid://cvppk8o5j668r" path="res://scenes/player/scout.tscn" id="19_gd7nx"]
 [ext_resource type="PackedScene" uid="uid://bj0k507mhq7a4" path="res://scenes/player/bug.tscn" id="20_4lnny"]
+[ext_resource type="PackedScene" uid="uid://cuwc568w5r1xv" path="res://scenes/objects/car.tscn" id="21_cnio0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 texture = ExtResource("8_uaeil")
@@ -59,6 +60,12 @@ texture_region_size = Vector2i(390, 390)
 [sub_resource type="TileSet" id="TileSet_oe17f"]
 tile_size = Vector2i(390, 390)
 sources/0 = SubResource("TileSetAtlasSource_6u4a0")
+
+[sub_resource type="Curve2D" id="Curve2D_4lnny"]
+_data = {
+"points": PackedVector2Array(-256.8, 127.2, 256.8, -127.2, -2298.734, 893.99963, -243.68744, -78.45792, 243.68744, 78.45792, -244.33398, 932.3996, 283.3183, -245.39893, -283.3183, 245.39893, -170.73389, 3005.9995, 500.9784, 165.25894, -500.9784, -165.25894, -2298.734, 3089.1995, 73.434296, 320.95044, -73.434296, -320.95044, -2490.734, 1277.9995, -111.2, 58.399998, 111.2, -58.399998, -2298.734, 893.99963)
+}
+point_count = 6
 
 [node name="Outside" unique_id=1738811471 instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_ex6t8")
@@ -202,6 +209,17 @@ scale = Vector2(0.25, 0.25)
 [node name="Player" parent="." index="5" unique_id=1222607543]
 position = Vector2(530, 670)
 rotation = 1.4922565
+
+[node name="CarPath" type="Path2D" parent="." index="8" unique_id=1227089758]
+position = Vector2(222.19498, 144.4616)
+scale = Vector2(1.0521376, 0.91158307)
+curve = SubResource("Curve2D_4lnny")
+
+[node name="Car" parent="CarPath" index="0" unique_id=1516327136 instance=ExtResource("21_cnio0")]
+position = Vector2(-2298.7344, 893.99963)
+rotation = -0.4835883
+scale = Vector2(0.5, 0.5)
+progress = 8800.214
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
