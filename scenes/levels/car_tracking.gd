@@ -43,12 +43,4 @@ func _on_attack_area_body_entered(_body: Node2D) -> void:
 
 func _on_attack_area_body_exited(_body: Node2D) -> void:
 	is_player_near = false
-	animation_player.pause()
-	
-	var tween := get_tree().create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(laser_line_1, "width", 0, randf_range(0.2, 0.5)).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(laser_line_2, "width", 0, randf_range(0.2, 0.5)).set_trans(Tween.TRANS_CUBIC)
-	
-	await tween.finished
 	animation_player.stop()
