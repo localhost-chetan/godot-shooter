@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dmkq63tinm2dh"]
+
+[ext_resource type="Texture2D" uid="uid://bsxbk4l5hi3cc" path="res://graphics/enemies/hunter/hunter.png" id="1_6ymor"]
+[ext_resource type="Script" uid="uid://cfkstwei158nf" path="res://scenes/player/hunter.gd" id="1_58np8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvku2"]
+radius = 28.0
+height = 196.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd7ja"]
+radius = 1114.0646
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvku2"]
+radius = 157.11461
+
+[node name="Hunter" type="CharacterBody2D" unique_id=1017043183 groups=["Entity"]]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_58np8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=819467097]
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_6ymor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=347830820]
+position = Vector2(-5, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jvku2")
+
+[node name="NoticeArea" type="Area2D" parent="." unique_id=589338388]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea" unique_id=154281349]
+shape = SubResource("CircleShape2D_vd7ja")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=653351270]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=802727169]
+shape = SubResource("CircleShape2D_jvku2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1331498981]
+debug_enabled = true
+
+[node name="NavigationAgentTimer" type="Timer" parent="." unique_id=446449233]
+wait_time = 1.75
+
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
+[connection signal="timeout" from="NavigationAgentTimer" to="." method="_on_navigation_agent_timer_timeout"]

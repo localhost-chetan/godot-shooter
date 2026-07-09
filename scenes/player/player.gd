@@ -5,7 +5,7 @@ signal grenade(player_position: Vector2, player_direction: Vector2)
 
 
 var input_direction: Vector2
-@export var move_speed := 250
+@export var move_speed := 320
 var can_laser := true
 var can_grenade := true
 

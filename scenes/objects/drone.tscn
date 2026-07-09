@@ -153,7 +153,7 @@ _data = {
 
 [node name="Drone" type="CharacterBody2D" unique_id=1695847280 groups=["Entity"]]
 collision_layer = 4
-collision_mask = 13
+collision_mask = 15
 script = ExtResource("1_bcy7p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=485158410]
