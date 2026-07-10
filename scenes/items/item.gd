@@ -39,4 +39,8 @@ func _on_body_entered(_body: Node2D) -> void:
 	elif (type == ItemType.health):
 		Globals.player_health += randi_range(10, 20)
 		
+	$AudioStreamPlayer2D.play()
+	self.hide()
+	await $AudioStreamPlayer2D.finished
+	
 	self.queue_free()

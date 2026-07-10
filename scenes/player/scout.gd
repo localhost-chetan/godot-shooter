@@ -50,6 +50,7 @@ func hit():
 		is_vulnerable = false
 		hit_timer.start()
 		sprite_2d.material.set_shader_parameter("progress", 1)
+		$AudioStreamPlayer2D.play()
 		
 	if (health <= 0):
 		self.queue_free()

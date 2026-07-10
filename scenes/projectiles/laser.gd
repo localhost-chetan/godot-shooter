@@ -7,6 +7,7 @@ var direction : Vector2
 
 func _ready():
 	%LaserTimeout.start()
+	$AudioStreamPlayer2D.play()
 	
 
 func _process(delta: float) -> void:

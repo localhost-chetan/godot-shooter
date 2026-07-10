@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bwd8hy1qlp6pi" path="res://graphics/enemies/bug/attack/00028.png" id="19_4yxgy"]
 [ext_resource type="Texture2D" uid="uid://b871h24m28r5b" path="res://graphics/enemies/bug/attack/00029.png" id="20_5er4p"]
 [ext_resource type="Texture2D" uid="uid://nwsir5wv0m6b" path="res://graphics/enemies/bug/attack/00030.png" id="21_pov6c"]
+[ext_resource type="AudioStream" uid="uid://c8ch4nynvf46f" path="res://audio/organic_impact.mp3" id="33_lsoak"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vd7ja"]
 radius = 455.55557
@@ -193,6 +194,11 @@ wait_time = 0.3
 [node name="AttackTimer" type="Timer" parent="Timers" unique_id=1264970658]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2115342003]
+stream = ExtResource("33_lsoak")
+max_distance = 1500.0
+bus = &"Sounds Effects"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]

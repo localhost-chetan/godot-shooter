@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://df1k7eh5goh2w" path="res://graphics/enemies/drone.png" id="1_hrrh7"]
 [ext_resource type="Shader" uid="uid://05x37dniv0e2" path="res://scenes/player/hit_flash.gdshader" id="2_3ucuc"]
 [ext_resource type="Texture2D" uid="uid://byiq0lacnpkv2" path="res://graphics/explosions/explosion_3.png" id="3_cnova"]
+[ext_resource type="AudioStream" uid="uid://dm7kyml837s1k" path="res://audio/explosion.wav" id="5_5v8jp"]
+[ext_resource type="AudioStream" uid="uid://bra042wfgf44a" path="res://audio/solid_impact.ogg" id="6_dcjpm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cnova"]
 shader = ExtResource("2_3ucuc")
@@ -15,54 +17,6 @@ radius = 987.6462
 
 [sub_resource type="Animation" id="Animation_cnova"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Explosion:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Explosion:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Explosion:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_3ucuc"]
 resource_name = "explosion"
@@ -144,6 +98,21 @@ tracks/5/keys = {
 "method": &"on_explosion_stop_movement"
 }]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_5v8jp")
+}],
+"times": PackedFloat32Array(0.12)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5v8jp"]
 _data = {
@@ -176,7 +145,6 @@ unique_name_in_owner = true
 wait_time = 0.2
 
 [node name="Explosion" type="Sprite2D" parent="." unique_id=977710003]
-visible = false
 scale = Vector2(2.03125, 2.03125)
 texture = ExtResource("3_cnova")
 hframes = 8
@@ -184,6 +152,13 @@ vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1691933552]
 libraries/ = SubResource("AnimationLibrary_5v8jp")
+
+[node name="Sounds" type="Node" parent="." unique_id=1678156817]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1109413435]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Sounds" unique_id=76356758]
+stream = ExtResource("6_dcjpm")
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]

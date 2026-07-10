@@ -48,6 +48,7 @@ func hit():
 		health -= randi_range(5, 10)
 		hit_timer.start()
 		$Sprite2D.material.set_shader_parameter("progress", 1)
+		$Sounds/HitSound.play()
 		
 		if (health <= 0):
 			$AnimationPlayer.play("explosion")

@@ -6,7 +6,6 @@ extends RigidBody2D
 
 var is_explosion_active := false
 
-
 func explode():
 	$AnimationPlayer.play("Explosion")
 	is_explosion_active = true

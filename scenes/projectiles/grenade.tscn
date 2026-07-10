@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://h38wklv8sje7" path="res://scenes/projectiles/grenade.gd" id="1_b7x1w"]
 [ext_resource type="Texture2D" uid="uid://byiq0lacnpkv2" path="res://graphics/explosions/explosion_3.png" id="3_3382y"]
 [ext_resource type="Texture2D" uid="uid://b34xtclrtfqxr" path="res://graphics/lights/textures/circle.png" id="4_oqjs3"]
+[ext_resource type="AudioStream" uid="uid://dm7kyml837s1k" path="res://audio/explosion.wav" id="5_u7dq4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1mnvm"]
 
@@ -141,6 +142,21 @@ tracks/4/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_u7dq4")
+}],
+"times": PackedFloat32Array(0.33333334)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_oqjs3"]
 length = 0.001
@@ -260,3 +276,5 @@ texture_scale = 0.04
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2036382885]
 libraries/ = SubResource("AnimationLibrary_u7dq4")
 autoplay = &"Blinking"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1743991317]
