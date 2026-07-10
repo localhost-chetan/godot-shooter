@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7vl74ow80k3x" path="res://scenes/player/scout.gd" id="1_2j1ud"]
 [ext_resource type="Texture2D" uid="uid://dodurqyroyjnx" path="res://graphics/enemies/scout.png" id="1_8u3o6"]
 [ext_resource type="Shader" uid="uid://05x37dniv0e2" path="res://scenes/player/hit_flash.gdshader" id="2_tjioi"]
+[ext_resource type="AudioStream" uid="uid://bra042wfgf44a" path="res://audio/solid_impact.ogg" id="4_o3mfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd7ja"]
 radius = 49.497475
@@ -58,6 +59,10 @@ wait_time = 0.2
 unique_name_in_owner = true
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1108064852]
+stream = ExtResource("4_o3mfp")
+bus = &"Sounds Effects"
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

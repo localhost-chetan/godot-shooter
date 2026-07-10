@@ -18,6 +18,7 @@ var grenade_count := MAX_GRENADE_COUNT:
 		stat_change.emit()
 
 
+var player_hit_sound: AudioStreamPlayer2D
 var is_player_vulnerable := true
 var player_health := 100:
 	set(value):
@@ -36,6 +37,13 @@ func start_invulnerability():
 	await get_tree().create_timer(0.5).timeout
 	is_player_vulnerable = true
 	
+
+func _ready():
+	player_hit_sound = AudioStreamPlayer2D.new()
+	player_hit_sound.stream = load("res://audio/solid_impact.ogg")
+	player_hit_sound.set_bus("Sound Effects")
+	add_child(player_hit_sound)
+
 
 enum ItemType {
 	laser,

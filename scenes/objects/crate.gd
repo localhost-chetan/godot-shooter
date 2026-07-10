@@ -14,5 +14,6 @@ func hit():
 		$LidSprite.hide()
 		var pos := ($SpawnPositions.get_children().pick_random() as Marker2D).global_position
 		open.emit(pos, current_direction)
-		
+		$AudioStreamPlayer2D.play()
+
 		max_available_items -= 1
